@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mini app de distribución de personas en mesa para cumpleaños</title>
+    <meta charset="UTF-8">
+    <style>
+
+        body {
+            background-color: #333333;
+            position: relative;
+        }
+
+        #mesa {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #F5DEB3;
+            border-radius: 50%;
+        }
+
+        #personas {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .persona {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 65px;
+            height: 50px;
+            background-color: #87CEFA;
+            border-radius: 50%;
+            color: black;
+            font-weight: bold;
+            font-size: 15px;
+            border: 2px solid black;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 10%);
+        }
+
+        #num_personas {
+            transform: translate(-50%, 1108%);
+            z-index: 2;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="num_personas" class="center">23</div>
+	<div id="mesa" class="center">
+		<div id="personas"></div>
+	</div>
+	
+    <script>
+    const colores = {
+        cumple: "#c77f48",
+        felipe: "#87CEFA",
+        montoro: "#bd87fa",
+        jesus: "#fa8796",
+        natalia: "#9efa87",
+    }
+    
+    const personas = [
+        "Cortina", 
+        "Montoro",
+        "Coper",
+        "Dehisyre",
+        "Elías",
+        "Michel",
+        "Amaya",
+        "Felipe",
+        "Velazquez",
+        "Carlos",
+        "Daps",
+        "Dylan",
+        "Josué",
+        "Anthony",
+        "Pablo",
+        "Jesús",
+        "Guillermo",
+        "Orgaz", 
+        "Natalia", 
+        "Santi", 
+        "Salcedo"
+    ];
+    
+    const data_colores = [
+        colores.cumple,
+        colores.montoro,
+        colores.montoro,
+        colores.montoro,
+        colores.montoro,
+        colores.montoro,
+        colores.felipe,
+        colores.felipe,
+        colores.felipe,
+        colores.felipe,
+        colores.felipe,
+        colores.felipe,
+        colores.felipe,
+        colores.felipe,
+        colores.jesus,
+        colores.jesus,
+        colores.jesus,
+        colores.natalia, 
+        colores.natalia, 
+        colores.felipe,  
+        colores.felipe
+    ];
+    const mesa = document.getElementById("mesa");
+    const personasDiv = document.getElementById("personas");
+
+    var diametro = Math.sqrt(personas.length) * 100;
+    mesa.style.width = diametro + "px";
+    mesa.style.height = diametro + "px";
+
+    for (let i = 0; i < personas.length; i++) {
+        const persona = document.createElement("div");
+        persona.style.backgroundColor = data_colores[i];
+        persona.innerText = personas[i];
+        persona.classList.add("persona");
+        personasDiv.appendChild(persona);
+
+        const angulo = i * (360 / personas.length);
+        const x = diametro/2 * Math.cos(angulo * Math.PI / 180) + 200;
+        const y = diametro/2 * Math.sin(angulo * Math.PI / 180) + 200;
+        persona.style.transform = "translate(" + x + "px," + y + "px)";
+        num_personas.innerText = `Personas esperadas: ${i+1}`;
+    }
+
+
+    </script>
+</body>
+</html>
