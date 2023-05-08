@@ -1,0 +1,11 @@
+<app-alert [content]="alertService.contentAlert"
+           [closed]="(alertService.onClosed)"
+           [typeAlert]="alertService.typeAlert"
+           [visible]="alertService.visibilityAlert"
+></app-alert>
+<app-logo-elementos-centrados>
+  <app-input-primary [placeholder]="languageService.getString('nombreCorreo')" [(value)]="nombre_correo" ></app-input-primary>
+  <app-input-primary [type]="'password'" [placeholder]="languageService.getString('contrasena')" [(value)]="contrasena"></app-input-primary>
+  <input type="file" (change)="onFileSelected($event)">
+  <app-button-primary [text]="languageService.getString('entrar')" [clickAction]="entrar" ></app-button-primary>
+</app-logo-elementos-centrados>

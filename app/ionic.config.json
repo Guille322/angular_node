@@ -1,0 +1,7 @@
+{
+  "name": "leapLearner",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

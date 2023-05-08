@@ -1,0 +1,19 @@
+
+<app-logo-elementos-centrados>
+    <div *ngFor="let message of messageList">
+        <li>
+            {{message}}
+        </li>  
+    </div>
+    <app-input-primary [placeholder]="'Escribe aquí'" [(value)]="newMessage" ></app-input-primary>
+
+    <app-button-primary [text]="'Enviar mensaje'" [clickAction]="sendMessage" ></app-button-primary>
+</app-logo-elementos-centrados>
+
+<!--
+<app-logo-elementos-centrados>
+  <app-input-primary [placeholder]="languageService.getString('nombreCorreo')" [(value)]="nombre_correo" ></app-input-primary>
+  <app-input-primary [type]="'password'" [placeholder]="languageService.getString('contrasena')" [(value)]="contrasena"></app-input-primary>
+  input [(ngModel)]="newMessage" (keyup)="$event.keyCode == 13 && sendMessage()" /> 
+    <button class="btn btn-primary" (click)="sendMessage()">Send Message</button> 
+</app-logo-elementos-centrados>-->

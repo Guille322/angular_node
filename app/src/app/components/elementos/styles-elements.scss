@@ -1,0 +1,44 @@
+$background-color: white;
+$color:black;
+$border: 2px solid blue;
+
+@font-face {
+    font-family: 'Baby Doll';
+    src: url('../fonts/Baby Doll.ttf');
+}
+
+* {
+    outline:none;
+}
+
+.fuente-app {
+    font-family: 'Baby Doll';
+}
+div {
+    background-color: #81ada9;
+}
+.divContenedor {
+    height: 100vh;
+    overflow-y: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.img-logo {
+    width: 100%;
+}
+.divElementosCentrados {
+    width: 30vw;
+}
+@media screen and (max-width: 600px) {
+    .divElementosCentrados {
+        width: 80vw;
+    }
+}
+
+button, button:hover, button:active, input, select {
+    background-color: $background-color !important;
+    color: $color !important;
+    border: $border !important;
+    font-weight: bold;
+    width: 100%;
+}

@@ -1,0 +1,15 @@
+<app-alert [content]="alertService.contentAlert"
+           [closed]="(alertService.onClosed)"
+           [typeAlert]="alertService.typeAlert"
+           [visible]="alertService.visibilityAlert"
+></app-alert>
+<app-logo-elementos-centrados>
+  <app-input-primary [placeholder]="languageService.getString('nombre')" [(value)]="nombre"></app-input-primary>
+  <app-input-primary [placeholder]="languageService.getString('apellido')" [(value)]="apellido"></app-input-primary>
+  <app-input-primary [placeholder]="languageService.getString('segundoApellido')" [(value)]="segundoApellido"></app-input-primary>
+  <app-input-primary [placeholder]="languageService.getString('correo')" [(value)]="correo"></app-input-primary>
+  <app-input-primary [type]="'password'" [placeholder]="languageService.getString('contrasena')" [(value)]="contrasena"></app-input-primary>
+  <app-input-primary [type]="'password'" [placeholder]="languageService.getString('confirmarContrasena')" [(value)]="confirmarContrasena"></app-input-primary>
+  <app-input-primary [type]="'date'" [placeholder]="languageService.getString('fechaNacimiento')" [(value)]="fechaNacimiento"></app-input-primary>
+  <app-button-primary [text]="languageService.getString('entrar')" [clickAction]="registrar"></app-button-primary>
+</app-logo-elementos-centrados>
